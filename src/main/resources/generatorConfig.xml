@@ -9,6 +9,7 @@
         <property name="beginningDelimiter" value="`"></property>
         <property name="endingDelimiter" value="`"></property>
 
+        <plugin type="com.test.plugins.BatchInsertPlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin>
@@ -23,17 +24,18 @@
             <property name="addRemarkComments" value="true"/>
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
-        <!--	<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                connectionURL="jdbc:mysql://drds4173avo0e3u3public.drds.aliyuncs.com:3306/mos_supplier" userId="mos_supplier"
-                            password="QHnifMC26li65">
-                </jdbcConnection>-->
-
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://rm-bp1c0xb0vs8a0sh4ro.mysql.rds.aliyuncs.com:3306/hn_nontaxpay" userId="hs_t4"
-                        password="HunDsun@2943">
-            <!-- 获取表注释 -->
-            <property name="useInformationSchema" value="true" />
+                        connectionURL="jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com:3306/feerate"
+                        userId="feerate"
+                        password="feerate@123">
         </jdbcConnection>
+
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://39.107.193.97:10001/testfeilv" userId="testfeilv"
+                        password="beyqct6mUN">
+            &lt;!&ndash;             获取表注释&ndash;&gt;
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>-->
         <javaTypeResolver>
             <!-- This property is used to specify whether MyBatis Generator should
                 force the use of java.math.BigDecimal for DECIMAL and NUMERIC fields, -->
@@ -58,24 +60,159 @@
         </javaClientGenerator>
 
         <!-- 要生成哪些表 -->
-        <table tableName="payment_chit" domainObjectName="PaymentChit"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="tb_fee_file" domainObjectName="TbFeeFile"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="false"></table>
 
-        <table tableName="payment_grade" domainObjectName="PaymentGrade"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="tb_fee_param" domainObjectName="TbFeeParam"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
                selectByPrimaryKeyQueryId="false"></table>
 
-        <table tableName="payment_info" domainObjectName="PaymentInfo"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="tb_param_file" domainObjectName="TbParamFile"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="false"></table>
 
-        <table tableName="payment_major" domainObjectName="PaymentMajor"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
+        <table tableName="tb_road_file" domainObjectName="TbRoadFile"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_node_relation" domainObjectName="TbNodeRelation"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_road_point" domainObjectName="TbRoadPoint"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_toll_station" domainObjectName="TbTollStation"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_vertical_section" domainObjectName="TbVerticalSection"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_gantry" domainObjectName="TbGantry"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_integrated_province" domainObjectName="TbIntegratedProvince"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_fee_param" domainObjectName="TbFeeParam"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_global_service" domainObjectName="TbGlobalService"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_integrated_version" domainObjectName="TbIntegratedVersion"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_module_params" domainObjectName="TbModuleParams"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_province_file_info" domainObjectName="TbProvinceFileInfo"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_download_detail" domainObjectName="TbDownloadDetail"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+
+        <table tableName="tb_check_result" domainObjectName="TbCheckResult"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tsys_parameter" domainObjectName="TsysParameter"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_invoke_record" domainObjectName="TbInvokeRecord"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_cross_info" domainObjectName="TbCrossInfo"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="tb_gantry_notice" domainObjectName="TbGantryNotice"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+
+
+        <!-- 太极 -->
+       <!-- <table tableName="fus_fee_file" domainObjectName="FusFeeFile"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_fee_param" domainObjectName="FusFeeParam"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_gantry" domainObjectName="FusGantry"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_node_relation" domainObjectName="FusNodeRelation"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_param_file" domainObjectName="FusParamFile"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_road_file" domainObjectName="FusRoadFile"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_road_point" domainObjectName="FusRoadPoint"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_toll_station" domainObjectName="FusTollStation"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>
+
+        <table tableName="fus_vertical_section" domainObjectName="FusVerticalSection"
+               enableCountByExample="false" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="false"></table>-->
+
     </context>
 </generatorConfiguration>

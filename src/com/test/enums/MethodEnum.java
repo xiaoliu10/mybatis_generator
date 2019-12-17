@@ -12,7 +12,12 @@ public enum MethodEnum {
 
     deleteByPrimaryKey("根据主键删除一条数据"), insert("插入一条数据"), insertSelective("插入一条数据, 为null 不操作"),
     selectByPrimaryKey("根据主键查询一条数据"),updateByPrimaryKeySelective("根据主键更新数据, 为空不操作"),
-    updateByPrimaryKey("根据主键更新数据");
+    updateByPrimaryKey("根据主键更新数据"),
+    updateByExampleSelective("根据条件表达式更新, 为空不操作"),
+    updateByExample("根据条件表达式更新"),
+    selectByExample("根据条件表达式查询"),
+    batchInsert("批量插入"),
+    deleteByExample("根据条件表达式批量删除");
 
     private String describe;
 

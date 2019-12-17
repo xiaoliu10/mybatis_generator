@@ -1,6 +1,5 @@
 package com.test;
 
-import com.sun.xml.internal.ws.api.ResourceLoader;
 import org.mybatis.generator.api.MyBatisGenerator;
 import org.mybatis.generator.config.Configuration;
 import org.mybatis.generator.config.xml.ConfigurationParser;
