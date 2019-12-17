@@ -1,5 +1,4 @@
-#mybatis_generator
+# mybatis_generator
 
-mybatis_generator自动生成代码demo
+添加中文注释, 方便直接复制到代码中, 不需要修改
 
-本人博客有讲解：http://www.cnblogs.com/JsonShare/p/5521901.html
